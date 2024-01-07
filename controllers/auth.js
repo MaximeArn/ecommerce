@@ -3,19 +3,22 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
 module.exports = {
+  renderRegisterPage: (req, res, next) => {
+    res.render("register");
+  },
+
   register: async ({ body: { username, password, email } }, res, next) => {
     try {
-      console.log("register");
       const newUser = new User({ username, password, email });
       await newUser.save();
-      res.status(200).json(newUser);
+      res.status(200).end();
     } catch (error) {
       next(error);
     }
   },
 
-  renderRegister: (req, res, next) => {
-    res.render("register");
+  renderLoginPage: (req, res, next) => {
+    res.render("login");
   },
 
   login: async (req, res, next) => {

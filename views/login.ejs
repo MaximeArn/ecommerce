@@ -5,37 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/register.css" />
-    <title>Register</title>
+    <title>Login</title>
   </head>
   <body>
-    <h1>Register</h1>
+    <h1>Login</h1>
 
-    <form id="registerForm">
+    <form id="loginForm">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required />
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
 
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required />
 
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
 
     <script>
       document
-        .getElementById("registerForm")
+        .getElementById("loginForm")
         .addEventListener("submit", function (event) {
           event.preventDefault();
 
           var formData = {
             username: document.getElementById("username").value,
-            email: document.getElementById("email").value,
             password: document.getElementById("password").value,
           };
 
-          fetch("http://localhost:6543/auth/register", {
+          fetch("http://localhost:6543/auth/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -43,12 +39,18 @@
             body: JSON.stringify(formData),
           })
             .then((response) => {
-              console.log("first then ");
               response.json();
             })
             .then((data) => {
-              console.log("user has been registered");
-              window.location.href = "/auth/login";
+              // window.location.href = "/home";
+              fetch("http://localhost:6543/home", {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  Autorization: `Bearer ${data.token}`,
+                },
+                body: JSON.stringify(formData),
+              });
             })
             .catch((error) => {
               console.log("Error:", error);

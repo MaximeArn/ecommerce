@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const path = require("path");
 const connectDb = require("./db/dbConection");
 const authMiddleware = require("./middlewares/auth");
 const adminsMiddleware = require("./middlewares/admins");
@@ -12,6 +13,11 @@ const adminsRouter = require("./routers/admins");
 const server = express();
 const PORT = process.env.PORT || 3000;
 connectDb();
+
+server.set("view engine", "ejs");
+server.set("views", path.join(__dirname, "views"));
+
+server.use(express.static(path.join(__dirname, "public")));
 
 server.use(express.json());
 server.use("/auth", authRouter);

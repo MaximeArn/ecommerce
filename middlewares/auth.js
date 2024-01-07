@@ -4,7 +4,6 @@ const AuthenticationError = require("../errors/authError");
 
 module.exports = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
-
   try {
     if (!token) throw new AuthenticationError("Authentication required", 401);
     const decodedToken = jwt.verify(token, process.env.SECRET_KEY);

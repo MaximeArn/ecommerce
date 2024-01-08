@@ -22,6 +22,9 @@ server.use(express.static(path.join(__dirname, "public")));
 
 server.use(cookieParser());
 server.use(express.json());
+server.get("/landing", (req, res, next) => {
+  res.render("auth/landing");
+});
 server.use("/auth", authRouter);
 // routes that needs a valid token to be accessed
 server.use("/", authMiddleware, usersRouter);

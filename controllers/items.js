@@ -20,10 +20,10 @@ module.exports = {
       next(error);
     }
   },
-  renderHome: async (req, res, next) => {
+  renderItemDetail: async ({ params: { id } }, res, next) => {
     try {
-      const items = await Item.find();
-      res.render("users/home", { items });
+      const [item] = await Item.find({ _id: id });
+      res.render("items/itemDetails", { item });
     } catch (error) {
       next(error);
     }

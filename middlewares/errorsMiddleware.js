@@ -26,9 +26,8 @@ module.exports = (error, req, res, next) => {
       throw error;
     }
   } catch (error) {
-    if (error.statusCode === 401) {
-      res.render("errors/error401", { error });
-    }
-    next(error);
+    error.statusCode === 401
+      ? res.status(401).render("errors/error401.ejs", { error })
+      : next(error);
   }
 };

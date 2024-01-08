@@ -14,11 +14,13 @@
       <p>Merci de vous être connecté.</p>
       <div class="card-container">
         <% items.forEach(item => { %>
-        <div class="card">
-          <h2><%= item.name %></h2>
-          <p>Prix: <%= item.price %> €</p>
-          <p>Description: <%= item.description %></p>
-        </div>
+        <a href="/item/<%= item._id %>">
+          <div class="card">
+            <h2><%= item.name %></h2>
+            <p>Prix: <%= item.price %> €</p>
+            <p>Description: <%= item.description %></p>
+          </div>
+        </a>
         <% }); %>
       </div>
     </div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails de l'article</title>
+    <link rel="stylesheet" href="/styles/itemDetails.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+      <h1>Détails de l'article</h1>
+      <div class="item-details">
+        <h2><%= item.name %></h2>
+        <p><strong>Prix:</strong> <%= item.price %> €</p>
+        <p><strong>Description:</strong> <%= item.description %></p>
+        <p><strong>Stock:</strong> <%= item.stock %> pièces</p>
+      </div>
+    </div>
+  </body>
+</html>

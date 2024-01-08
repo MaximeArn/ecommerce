@@ -32,6 +32,7 @@ module.exports = {
 
   addItemToCart: async (req, res, next) => {
     try {
+      console.log(req.params);
       const [user] = await User.find({ _id: req.user._id });
       user.addItem(req.params.id);
       user.save();

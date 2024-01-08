@@ -15,7 +15,7 @@
         <p><strong>Prix:</strong> <%= item.price %> €</p>
         <p><strong>Description:</strong> <%= item.description %></p>
         <p><strong>Stock:</strong> <%= item.stock %> pièces</p>
-        <form action="/item/addCart/<%= item._id %>" method="post">
+        <form id="addCartButton">
           <button type="submit" class="add-to-cart-button">
             Ajouter au panier
           </button>
@@ -23,4 +23,17 @@
       </div>
     </div>
   </body>
+  <script>
+    document
+      .getElementById("addCartButton")
+      .addEventListener("submit", (event) => {
+        event.preventDefault();
+        fetch("/item/addCart/<%= item._id %>", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      });
+  </script>
 </html>

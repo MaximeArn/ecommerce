@@ -7,6 +7,7 @@ const authMiddleware = require("./middlewares/auth");
 const adminsMiddleware = require("./middlewares/admins");
 const errorsMiddleware = require("./middlewares/errorsMiddleware");
 const loggerMiddleware = require("./middlewares/loggerMiddleware");
+const itemsRouter = require("./routers/items");
 const authRouter = require("./routers/auth");
 const usersRouter = require("./routers/users");
 const adminsRouter = require("./routers/admins");
@@ -28,6 +29,7 @@ server.get("/landing", (req, res, next) => {
 server.use("/auth", authRouter);
 // routes that needs a valid token to be accessed
 server.use("/", authMiddleware, usersRouter);
+server.use("/item", itemsRouter);
 // routes that needs a admin role to be accessed
 server.use("/admin", adminsMiddleware, adminsRouter);
 server.use(errorsMiddleware);

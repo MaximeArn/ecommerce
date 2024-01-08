@@ -41,4 +41,13 @@ module.exports = {
       next(error);
     }
   },
+
+  logOut: (req, res, next) => {
+    try {
+      res.clearCookie("authToken");
+      res.status(200).json({ message: "user signed out" });
+    } catch (error) {
+      next(error);
+    }
+  },
 };

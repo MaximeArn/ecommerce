@@ -14,6 +14,12 @@
   - [x] Create a Landing page that contains links to login and register pages
   - [x] Create a error401 view
 
+- ### Second phase :
+
+  - [x] Create an Item model that matchs the requirements of the app
+  - [x] Create a data file containing a lot of items (using chatGpt)
+  - [x] Feed the db by using the data file
+
 - ### Last phase :
   - [] write a documentation
   - [ ] host it

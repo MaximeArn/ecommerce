@@ -20,4 +20,12 @@ module.exports = {
       next(error);
     }
   },
+  renderHome: async (req, res, next) => {
+    try {
+      const items = await Item.find();
+      res.render("users/home", { items });
+    } catch (error) {
+      next(error);
+    }
+  },
 };

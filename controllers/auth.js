@@ -4,7 +4,7 @@ const User = require("../models/user");
 
 module.exports = {
   renderRegisterPage: (req, res, next) => {
-    res.render("register");
+    res.render("auth/register");
   },
 
   register: async ({ body: { username, password, email } }, res, next) => {
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   renderLoginPage: (req, res, next) => {
-    res.render("login");
+    res.render("auth/login");
   },
 
   login: async (req, res, next) => {

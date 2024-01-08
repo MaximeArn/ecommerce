@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const { isEmail } = require("validator");
 const AuthenticationError = require("../errors/authError");
+const Item = require("./item");
 
 const userSchema = new mongoose.Schema(
   {
@@ -29,6 +30,11 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "admin"],
       default: "user",
     },
+    cart: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Item",
+      default: [],
+    },
   },
   { timestamps: true }
 );
@@ -48,6 +54,14 @@ userSchema.pre("save", async function (next) {
 
 userSchema.methods.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
+};
+
+userSchema.methods.addItem = async function (itemId) {
+  try {
+    this.cart.push(itemId);
+  } catch (error) {
+    return next(error);
+  }
 };
 
 const User = mongoose.model("User", userSchema);

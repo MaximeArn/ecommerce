@@ -8,7 +8,6 @@
   </head>
   <body>
     <%- include('../partials/navbar.ejs') %>
-
     <div class="container">
       <h1>Détails de l'article</h1>
       <div class="item-details">
@@ -16,6 +15,11 @@
         <p><strong>Prix:</strong> <%= item.price %> €</p>
         <p><strong>Description:</strong> <%= item.description %></p>
         <p><strong>Stock:</strong> <%= item.stock %> pièces</p>
+        <form action="/item/addCart/<%= item._id %>" method="post">
+          <button type="submit" class="add-to-cart-button">
+            Ajouter au panier
+          </button>
+        </form>
       </div>
     </div>
   </body>

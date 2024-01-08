@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Item = require("../models/item");
+const User = require("../models/user");
 
 module.exports = {
   feedDatabase: async (req, res, next) => {
@@ -24,6 +25,17 @@ module.exports = {
     try {
       const [item] = await Item.find({ _id: id });
       res.render("items/itemDetails", { item });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  addItemToCart: async (req, res, next) => {
+    try {
+      const [user] = await User.find({ _id: req.user._id });
+      user.addItem(req.params.id);
+      user.save();
+      res.end();
     } catch (error) {
       next(error);
     }

@@ -14,6 +14,11 @@
             "date": 1704639487821,
             "name": "logs/uncaughtExceptions/exceptions-07-01-2024.log",
             "hash": "aedacc9a1588cfac97214a1c93619b60c6294cfb51a17afdc12a2b9100de3d90"
+        },
+        {
+            "date": 1704720372182,
+            "name": "logs/uncaughtExceptions/exceptions-08-01-2024.log",
+            "hash": "93d102160fd4917c287e0c373df83dc545a5ee93d679cc7005d5024ef93434a5"
         }
     ],
     "hashType": "sha256"

@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const connectDb = require("./db/dbConection");
 const authMiddleware = require("./middlewares/auth");
@@ -19,6 +20,7 @@ server.set("views", path.join(__dirname, "views"));
 
 server.use(express.static(path.join(__dirname, "public")));
 
+server.use(cookieParser());
 server.use(express.json());
 server.use("/auth", authRouter);
 // routes that needs a valid token to be accessed

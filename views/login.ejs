@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/register.css" />
+    <link rel="stylesheet" href="/styles/auth.css" />
     <title>Login</title>
   </head>
   <body>
@@ -38,19 +38,10 @@
             },
             body: JSON.stringify(formData),
           })
-            .then((response) => {
-              response.json();
-            })
+            .then((response) => response.json())
             .then((data) => {
-              // window.location.href = "/home";
-              fetch("http://localhost:6543/home", {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                  Autorization: `Bearer ${data.token}`,
-                },
-                body: JSON.stringify(formData),
-              });
+              console.log(data);
+              window.location.href = "/home";
             })
             .catch((error) => {
               console.log("Error:", error);

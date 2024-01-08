@@ -1,0 +1,19 @@
+.navbar {
+  padding: 15px;
+  background-color: #343a40;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: #333;
+}

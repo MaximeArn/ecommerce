@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="styles/home.css" />
   </head>
   <body>
-    <div class="navbar">
-      <a href="/home">Accueil</a>
-      <a href="/profile">Profil</a>
-    </div>
+    <%-include("../partials/navbar.ejs")%>
 
     <div class="container">
       <h1>Bienvenue sur la page d'accueil</h1>
@@ -21,7 +18,6 @@
           <h2><%= item.name %></h2>
           <p>Prix: <%= item.price %> €</p>
           <p>Description: <%= item.description %></p>
-          <p>Stock: <%= item.stock %> pièces</p>
         </div>
         <% }); %>
       </div>

@@ -22,6 +22,17 @@
         </form>
       </div>
     </div>
+    <div id="keepShoppingModal" class="modal-container">
+      <div class="modal">
+        <p>Voulez-vous accéder à votre panier ou continuer votre shopping ?</p>
+        <div class="modal-buttons">
+          <a href="/cart">
+            <button action>Accéder au panier</button>
+          </a>
+          <button id="continueShoppingButton">Continuer le shopping</button>
+        </div>
+      </div>
+    </div>
   </body>
   <script>
     document
@@ -33,7 +44,18 @@
           headers: {
             "Content-Type": "application/json",
           },
-        });
+        })
+          .then((response) => {
+            document.getElementById("keepShoppingModal").classList.add("show");
+          })
+          .catch((error) => console.log(error));
+      });
+
+    document
+      .getElementById("continueShoppingButton")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("keepShoppingModal").classList.remove("show");
       });
   </script>
 </html>

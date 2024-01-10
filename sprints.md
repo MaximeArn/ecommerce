@@ -24,6 +24,7 @@
   - [x] Add a "Add to cart" button on this view.
   - [x] On "Add to cart" button submit make a post requets to modify the user's cart in DB.
   - [ ] display a pop up to either show the cart or continue shopping.
+  - [ ] Add a link to user's cart in navbar.
 
 - ### Last phase :
   - [] write a documentation

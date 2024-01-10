@@ -50,3 +50,48 @@ strong {
 .add-to-cart-button:hover {
   background-color: #218838;
 }
+.modal-container {
+  display: none;
+}
+
+.modal-container.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #f8f8f8;
+  padding: 80px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+a button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+#continueShoppingButton {
+  background-color: #28a745;
+  color: #ffffff;
+}

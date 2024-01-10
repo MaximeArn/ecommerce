@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  color: #007bff;
+  color: #4caf50;
 }
 
 .card-container {
@@ -36,9 +36,13 @@ h1 {
 }
 
 h2 {
-  color: #007bff;
+  color: #4caf50;
 }
 
 p {
   color: #555;
+}
+
+a {
+  text-decoration: none;
 }

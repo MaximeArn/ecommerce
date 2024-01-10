@@ -16,9 +16,25 @@ module.exports = {
   renderCartDetails: async (req, res, next) => {
     try {
       const user = await User.findOne(req.user._id).populate("cart");
+      user.cart = groupItemsById(user.cart);
       res.render("users/cartDetails.ejs", { user });
     } catch (error) {
       next(error);
     }
   },
 };
+
+function groupItemsById(cart) {
+  const groupedItems = {};
+
+  cart.forEach((item) => {
+    const itemId = item._id.toString();
+    if (groupedItems[itemId]) {
+      groupedItems[itemId].push(item);
+    } else {
+      groupedItems[itemId] = [item];
+    }
+  });
+  const result = Object.values(groupedItems);
+  return result;
+}

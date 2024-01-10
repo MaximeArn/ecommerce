@@ -18,9 +18,16 @@
         <ul class="cart-items-list">
           <% user.cart.forEach(item => { %>
           <li class="cart-item">
-            <h2><%= item.name %></h2>
-            <p><strong>Description:</strong> <%= item.description %></p>
-            <p><strong>Prix:</strong> <%= item.price %> €</p>
+            <div class="item-details">
+              <h2><%= item.name %></h2>
+              <p><strong>Description:</strong> <%= item.description %></p>
+              <p><strong>Prix:</strong> <%= item.price %> €</p>
+            </div>
+            <div class="quantity-controls">
+              <input type="number" min="1" max="<%= item.stock%>" />
+              <button class="quantity-control-btn increment">+</button>
+              <button class="quantity-control-btn decrement">-</button>
+            </div>
           </li>
           <% }); %>
         </ul>
@@ -34,8 +41,6 @@
       </div>
     </div>
 
-    <script>
-      const calculateTotal = () => "45 ";
-    </script>
+    <script></script>
   </body>
 </html>

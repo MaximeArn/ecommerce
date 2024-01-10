@@ -23,8 +23,14 @@
   - [x] On click on a card display a itemDetails view with dynamics details from the server
   - [x] Add a "Add to cart" button on this view.
   - [x] On "Add to cart" button submit make a post requets to modify the user's cart in DB.
-  - [ ] display a pop up to either show the cart or continue shopping.
-  - [ ] Add a link to user's cart in navbar.
+  - [x] display a pop up to either show the cart or continue shopping.
+  - [x] Add a link to user's cart in navbar.
+  - [x] Create a carteDetail view
+  - [x] On server side when cart is populated group same items in arrays to return an array of arrays.
+  - [ ] Return also a "total" calculated on server side.
+  - [ ] Write methods for increment and decrement methods.
+
+- ### Third phase : Admin part.
 
 - ### Last phase :
   - [] write a documentation

@@ -16,8 +16,11 @@ module.exports = {
   renderCartDetails: async (req, res, next) => {
     try {
       const user = await User.findOne(req.user._id).populate("cart");
-      user.cart = groupItemsById(user.cart);
-      res.render("users/cartDetails.ejs", { user });
+      const parsedUser = { ...user._doc };
+      parsedUser.cart = groupItemsById(user.cart);
+      parsedUser.totalCart = getCartTotal(user.cart);
+      parsedUser.cartLength = user.cart.length;
+      res.render("users/cartDetails.ejs", { user: parsedUser });
     } catch (error) {
       next(error);
     }
@@ -35,6 +38,15 @@ function groupItemsById(cart) {
       groupedItems[itemId] = [item];
     }
   });
+
   const result = Object.values(groupedItems);
   return result;
 }
+
+const getCartTotal = (cart) => {
+  let total = 0;
+  cart.forEach((item) => {
+    total = total + item.price;
+  });
+  return total;
+};

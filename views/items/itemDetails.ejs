@@ -49,6 +49,9 @@
           .then((response) => {
             document.getElementById("keepShoppingModal").classList.add("show");
           })
+          .then((data) => {
+            console.log(data);
+          })
           .catch((error) => console.log(error));
       });
 

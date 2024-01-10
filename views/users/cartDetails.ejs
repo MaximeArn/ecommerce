@@ -16,15 +16,22 @@
         <p>Le panier est vide.</p>
         <% } else { %>
         <ul class="cart-items-list">
-          <% user.cart.forEach(item => { %>
+          <% user.cart.forEach(itemGroup => { %>
           <li class="cart-item">
             <div class="item-details">
-              <h2><%= item.name %></h2>
-              <p><strong>Description:</strong> <%= item.description %></p>
-              <p><strong>Prix:</strong> <%= item.price %> €</p>
+              <h2><%= itemGroup[0].name %></h2>
+              <p>
+                <strong>Description:</strong> <%= itemGroup[0].description %>
+              </p>
+              <p><strong>Prix:</strong> <%= itemGroup[0].price %> €</p>
             </div>
             <div class="quantity-controls">
-              <input type="number" min="1" max="<%= item.stock%>" />
+              <input
+                type="number"
+                value="<%= itemGroup.length%>"
+                min="1"
+                max="<%= itemGroup[0].stock%>"
+              />
               <button class="quantity-control-btn increment">+</button>
               <button class="quantity-control-btn decrement">-</button>
             </div>
@@ -36,11 +43,18 @@
 
       <div class="cart-summary">
         <h2>Résumé du Panier</h2>
-        <p>Total d'articles: 18</p>
-        <p>Total du Panier: 45 €</p>
+        <p>Total d'articles: <%= user.cartLength%></p>
+        <p>Total du Panier: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
       </div>
     </div>
-
-    <script></script>
   </body>
+  <script>
+    const getCartLength = (cart) => {
+      let cartLength = 0;
+      cart.array.forEach((itemGroup) => {
+        cartLength = cartLength + itemGroup.cartLength;
+      });
+    };
+    return cartLength;
+  </script>
 </html>

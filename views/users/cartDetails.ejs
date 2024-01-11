@@ -38,7 +38,10 @@
               >
                 +
               </button>
-              <button id="decrement" class="quantity-control-btn decrement">
+              <button
+                value="<%= itemGroup[0]._id%>"
+                class="quantity-control-btn decrement"
+              >
                 -
               </button>
             </div>
@@ -81,6 +84,27 @@
       element.addEventListener("click", (event) => {
         event.preventDefault();
         increment(event);
+      });
+    });
+
+    const decrement = ({ target: { value } }) => {
+      const requestUri = "http://localhost:6543/item/removeFromCart/" + value;
+      fetch(requestUri, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((_) => {})
+        .then((_) => {
+          window.location.reload();
+        })
+        .catch((error) => console.log(error));
+    };
+    document.querySelectorAll(".decrement").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        decrement(event);
       });
     });
   </script>

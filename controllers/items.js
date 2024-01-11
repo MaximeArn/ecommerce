@@ -40,4 +40,25 @@ module.exports = {
       next(error);
     }
   },
+  removeItemFromCart: async (
+    { params: { itemId }, user: { id } },
+    res,
+    next
+  ) => {
+    try {
+      const user = await User.findOne({ _id: id });
+      const indexToDelete = user.cart.findIndex((cartItemId) => {
+        return cartItemId.toString() === itemId;
+      });
+      if (indexToDelete === -1) {
+        throw new Error("this item is not in the database !");
+      } else {
+        user.cart.splice(indexToDelete, 1);
+      }
+      await user.save();
+      res.end();
+    } catch (error) {
+      next(error);
+    }
+  },
 };

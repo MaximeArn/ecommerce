@@ -27,7 +27,8 @@
   - [x] Add a link to user's cart in navbar.
   - [x] Create a carteDetail view
   - [x] On server side when cart is populated group same items in arrays to return an array of arrays.
-  - [ ] Return also a "total" calculated on server side.
+  - [x] map on this array of itemGroup, display a line per itemGroup and set amount on itemGroup.length.
+  - [x] Return also a "total" calculated on server side.
   - [ ] Write methods for increment and decrement methods.
 
 - ### Third phase : Admin part.

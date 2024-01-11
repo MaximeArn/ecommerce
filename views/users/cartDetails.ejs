@@ -32,8 +32,15 @@
                 min="1"
                 max="<%= itemGroup[0].stock%>"
               />
-              <button class="quantity-control-btn increment">+</button>
-              <button class="quantity-control-btn decrement">-</button>
+              <button
+                value="<%= itemGroup[0]._id%>"
+                class="quantity-control-btn increment"
+              >
+                +
+              </button>
+              <button id="decrement" class="quantity-control-btn decrement">
+                -
+              </button>
             </div>
           </li>
           <% }); %>
@@ -54,7 +61,27 @@
       cart.array.forEach((itemGroup) => {
         cartLength = cartLength + itemGroup.cartLength;
       });
+      return cartLength;
     };
-    return cartLength;
+    const increment = ({ target: { value } }) => {
+      const requestUri = "http://localhost:6543/item/addCart/" + value;
+      fetch(requestUri, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((_) => {})
+        .then((_) => {
+          window.location.reload();
+        })
+        .catch((error) => console.log(error));
+    };
+    document.querySelectorAll(".increment").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        increment(event);
+      });
+    });
   </script>
 </html>

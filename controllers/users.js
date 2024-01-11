@@ -25,6 +25,17 @@ module.exports = {
       next(error);
     }
   },
+
+  emptyCart: async (req, res, next) => {
+    try {
+      const user = req.user;
+      user.cart = [];
+      await user.save();
+      res.end();
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 function groupItemsById(cart) {

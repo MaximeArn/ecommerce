@@ -29,11 +29,20 @@
   - [x] On server side when cart is populated group same items in arrays to return an array of arrays.
   - [x] map on this array of itemGroup, display a line per itemGroup and set amount on itemGroup.length.
   - [x] Return also a "total" calculated on server side.
-  - [ ] Write methods for increment and decrement methods.
+  - [x] Write methods for increment and decrement methods.
+  - [ ] Add a "Empty Cart" button at the end of the cartDetail view
+  - [ ] Link it to a emptyCart method.
 
 - ### Third phase : Admin part.
 
+- ### Fourth phase : Search bar.
+
+- ### Fifth phase : code refacto.
+
+  - [ ] Check if it is possible to factorize some html using ejs partials
+  - [ ] sort controllers methods
+
 - ### Last phase :
-  - [] write a documentation
+  - [ ] write a documentation
   - [ ] host it
   - [ ] GOT IT !

@@ -13,6 +13,7 @@
     <div class="container cart-container">
       <div class="cart-items">
         <% if (user.cart.length === 0) { %>
+
         <p>Le panier est vide.</p>
         <% } else { %>
         <ul class="cart-items-list">
@@ -57,6 +58,11 @@
         <p>Total du Panier: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
       </div>
     </div>
+    <% if (user.cart.length !== 0) { %>
+    <div class="empty-cart-container">
+      <button id="emptyCartButton">Empty Cart</button>
+    </div>
+    <% }%>
   </body>
   <script>
     const getCartLength = (cart) => {
@@ -107,5 +113,22 @@
         decrement(event);
       });
     });
+
+    document
+      .getElementById("emptyCartButton")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        fetch("http://localhost:6543/emptyCart", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((_) => {})
+          .then((_) => {
+            window.location.reload();
+          })
+          .catch((error) => console.log(error));
+      });
   </script>
 </html>

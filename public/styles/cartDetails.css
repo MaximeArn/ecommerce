@@ -83,3 +83,23 @@ strong {
   font-size: 14px;
   cursor: pointer;
 }
+
+.empty-cart-container {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+#emptyCartButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#emptyCartButton:hover {
+  background-color: #cc0000;
+}

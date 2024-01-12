@@ -2,6 +2,9 @@
 <div class="navbar">
   <a href="/home">Accueil</a>
   <div>
+    <% if(user.role === "admin"){ %>
+    <a href="/admin">Admin</a>
+    <% } %>
     <a href="/cart">Cart</a>
     <a href="/profile">Profil</a>
   </div>

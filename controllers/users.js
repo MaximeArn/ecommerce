@@ -7,7 +7,7 @@ module.exports = {
   renderHome: async (req, res, next) => {
     try {
       const items = await Item.find();
-      res.render("users/home", { items });
+      res.render("users/home", { items, user: req.user });
     } catch (error) {
       next(error);
     }

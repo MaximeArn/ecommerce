@@ -29,6 +29,11 @@
             "date": 1705006794536,
             "name": "logs/uncaughtExceptions/exceptions-11-01-2024.log",
             "hash": "5dabe372abdf84d1c516ddcb039065799b0f5f601570a5d1e0263fd85abbdb53"
+        },
+        {
+            "date": 1705056420861,
+            "name": "logs/uncaughtExceptions/exceptions-12-01-2024.log",
+            "hash": "1a1e598f4d2278697acb56c4d8649081100e837f637e7f533cfa7190e2527640"
         }
     ],
     "hashType": "sha256"

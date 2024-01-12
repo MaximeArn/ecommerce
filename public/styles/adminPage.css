@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.side-panel {
+  width: 15%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.side-panel h2 {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}

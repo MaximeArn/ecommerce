@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const { getUsers } = require("../controllers/admins");
+const { renderAdminPage } = require("../controllers/admins");
 
 const adminsRouter = Router();
 
-adminsRouter.get("/getUsers", getUsers);
+adminsRouter.get("/", renderAdminPage);
 
 module.exports = adminsRouter;

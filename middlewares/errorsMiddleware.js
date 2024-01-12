@@ -28,6 +28,8 @@ module.exports = (error, req, res, next) => {
   } catch (error) {
     error.statusCode === 401
       ? res.status(401).render("errors/error401.ejs", { error })
+      : error.statusCode === 403
+      ? res.status(403).render("errors/error403.ejs", { error })
       : next(error);
   }
 };

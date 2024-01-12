@@ -30,12 +30,23 @@
   - [x] map on this array of itemGroup, display a line per itemGroup and set amount on itemGroup.length.
   - [x] Return also a "total" calculated on server side.
   - [x] Write methods for increment and decrement methods.
-  - [ ] Add a "Empty Cart" button at the end of the cartDetail view
-  - [ ] Link it to a emptyCart method.
+  - [x] Add a "Empty Cart" button at the end of the cartDetail view
+  - [x] Link it to a emptyCart method.
 
 - ### Third phase : Admin part.
 
+  - [ ] In home view if user is admin add a /admin link in navbar
+  - [ ] Create a addItem page.
+  - [ ] Link it to a corresponding method.
+  - [ ] Create an error 403 view
+  - [ ] in admin middleware render this view
+
 - ### Fourth phase : Search bar.
+
+  - [ ] Design a searchBar in the navbar
+  - [ ] On submit make a request to filter items.
+  - [ ] On server side get revelant items based on either tags or name or description.
+  - [ ] Return a searchResults view that maps on the response.
 
 - ### Fifth phase : code refacto.
 

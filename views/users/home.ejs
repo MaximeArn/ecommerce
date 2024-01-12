@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/home.css" />
   </head>
   <body>
-    <%-include("../partials/navbar.ejs")%>
+    <%- include("../partials/navbar.ejs", {user})%>
 
     <div class="container">
       <h1>Bienvenue sur la page d'accueil</h1>

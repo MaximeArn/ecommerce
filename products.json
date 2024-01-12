@@ -322,5 +322,95 @@
     "seller": "MusicalJoyToys",
     "comments": [],
     "tags": ["toys", "musical instruments", "kids"]
+  },
+  {
+    "name": "To Kill a Mockingbird",
+    "price": 12.99,
+    "description": "A classic novel by Harper Lee.",
+    "stock": 20,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "classic", "fiction"]
+  },
+  {
+    "name": "1984",
+    "price": 14.99,
+    "description": "George Orwell's dystopian masterpiece.",
+    "stock": 15,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "dystopian", "fiction"]
+  },
+  {
+    "name": "The Great Gatsby",
+    "price": 16.99,
+    "description": "F. Scott Fitzgerald's iconic Jazz Age novel.",
+    "stock": 12,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "classic", "fiction"]
+  },
+  {
+    "name": "Pride and Prejudice",
+    "price": 13.99,
+    "description": "Jane Austen's timeless love story.",
+    "stock": 18,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "romance", "classic"]
+  },
+  {
+    "name": "The Catcher in the Rye",
+    "price": 11.99,
+    "description": "J.D. Salinger's coming-of-age novel.",
+    "stock": 22,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "coming-of-age", "fiction"]
+  },
+  {
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "price": 19.99,
+    "description": "J.K. Rowling's magical debut.",
+    "stock": 8,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "fantasy", "young adult"]
+  },
+  {
+    "name": "The Hobbit",
+    "price": 18.99,
+    "description": "J.R.R. Tolkien's classic fantasy adventure.",
+    "stock": 10,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "fantasy", "adventure"]
+  },
+  {
+    "name": "The Da Vinci Code",
+    "price": 17.99,
+    "description": "Dan Brown's gripping mystery thriller.",
+    "stock": 14,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "mystery", "thriller"]
+  },
+  {
+    "name": "The Alchemist",
+    "price": 15.99,
+    "description": "Paulo Coelho's inspirational novel.",
+    "stock": 16,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "inspirational", "fiction"]
+  },
+  {
+    "name": "The Girl with the Dragon Tattoo",
+    "price": 20.99,
+    "description": "Stieg Larsson's gripping crime novel.",
+    "stock": 11,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "crime", "mystery"]
   }
 ]

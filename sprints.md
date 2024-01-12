@@ -33,22 +33,32 @@
   - [x] Add a "Empty Cart" button at the end of the cartDetail view
   - [x] Link it to a emptyCart method.
 
-- ### Third phase : Admin part.
+- ### Third Phase : Seller part
 
-  - [ ] In home view if user is admin add a /admin link in navbar
+  - [x] Add a "seller" role in user model
+  - [x] Depending on status display a "myItems" nav link in navbar.
+  - [x] implement a seller middleware that autorize only sellers
+  - [ ] on myItems return a view that map on items that belongs to the user
+  - [ ] allow user to modify the item
+  - [ ] allow user to delete the item
+  - [ ] allow user to add an item
+
+- ### Fourth phase : Admin part.
+
+  - [x] In home view if user is admin add a /admin link in navbar
   - [ ] Create a addItem page.
   - [ ] Link it to a corresponding method.
-  - [ ] Create an error 403 view
-  - [ ] in admin middleware render this view
+  - [x] Create an error 403 view
+  - [x] in admin middleware render this view
 
-- ### Fourth phase : Search bar.
+- ### Fifth phase : Search bar.
 
   - [ ] Design a searchBar in the navbar
   - [ ] On submit make a request to filter items.
   - [ ] On server side get revelant items based on either tags or name or description.
   - [ ] Return a searchResults view that maps on the response.
 
-- ### Fifth phase : code refacto.
+- ### Sixth phase : code refacto.
 
   - [ ] Check if it is possible to factorize some html using ejs partials
   - [ ] sort controllers methods

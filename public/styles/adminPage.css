@@ -10,39 +10,37 @@ body {
 }
 
 .side-panel {
-  width: 20%;
-  background-color: #333;
+  /* width: 20%; */
+  background-color: #343a40;
   color: #fff;
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid white;
 }
 
 .side-panel h2 {
   margin-bottom: 20px;
   font-size: 1.5em;
-  padding-bottom: 15px;
-  border-bottom: 1px solid white;
+  padding-bottom: 40px;
 }
 
 ul {
-  list-style: none;
   padding: 0;
 }
 
 li {
   margin-bottom: 10px;
+  list-style: none;
 }
 
-a {
+li a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
   font-size: 1.1em;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ffd700;
+  color: #4caf50;
 }
 
 .main-content {

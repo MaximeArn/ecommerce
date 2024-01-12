@@ -7,9 +7,10 @@
     <title>Admin Page</title>
   </head>
   <body>
+    <%- include('../partials/navbar.ejs', {user : null}) %>
     <div class="container">
       <div class="side-panel">
-        <h2>Welcome, Admin!</h2>
+        <h2>Admins actions :</h2>
         <ul>
           <li><a href="/admin/">Dashboard</a></li>
           <li><a href="/admin/">Users</a></li>

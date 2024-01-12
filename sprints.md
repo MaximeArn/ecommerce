@@ -38,9 +38,13 @@
   - [x] Add a "seller" role in user model
   - [x] Depending on status display a "myItems" nav link in navbar.
   - [x] implement a seller middleware that autorize only sellers
-  - [ ] on myItems return a view that map on items that belongs to the user
-  - [ ] allow user to modify the item
-  - [ ] allow user to delete the item
+  - [x] on myItems return a view that map on items that belongs to the user
+  - [ ] allow user to modify the item :
+    - [ ] implement an updateItem route
+    - [ ] on get return a view that contains a form
+    - [ ] on post (sent by the form) perform the changes
+  - [ ] allow user to delete the item :
+    - [ ] add a "delete" button at the end of the updateItem view
   - [ ] allow user to add an item
 
 - ### Fourth phase : Admin part.

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifier l'Article</title>
+    <link rel="stylesheet" href="/styles/updateItem.css" />
+  </head>
+  <body>
+    <%- include("../partials/navbar.ejs", { user : null }) %>
+
+    <div class="container">
+      <header>
+        <h1>Modifier l'Article</h1>
+      </header>
+
+      <form action="/item/<%= item._id %>/update" method="POST">
+        <label for="name">Nom de l'article:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="<%= item.name %>"
+          required
+        />
+
+        <label for="price">Prix:</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          step="0.01"
+          placeholder="<%= item.price %>"
+          required
+        />
+
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="<%= item.description %>"
+          required
+        ></textarea>
+
+        <label for="stock">Stock:</label>
+        <input
+          type="number"
+          id="stock"
+          name="stock"
+          placeholder="<%= item.stock %>"
+          required
+        />
+
+        <button type="submit">Enregistrer les modifications</button>
+      </form>
+
+      <form action="/item/<%= item._id %>/delete" method="POST">
+        <button type="submit" class="delete-button">Supprimer l'Article</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/styles/navbar.css" />
+<div class="navbar">
+  <a href="/home">Accueil</a>
+  <div>
+    <% if(user && user.role === "admin"){ %>
+    <a href="/admin">Admin</a>
+    <% } %> <% if(user && user.role === "seller"){ %>
+    <a href="/seller">MyItems</a>
+    <% } %>
+    <a href="/cart">Cart</a>
+    <a href="/profile">Profil</a>
+  </div>
+</div>

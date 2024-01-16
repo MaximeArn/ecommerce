@@ -1,0 +1,416 @@
+[
+  {
+    "name": "Smartphone X",
+    "price": 599.99,
+    "description": "A high-performance smartphone with advanced features.",
+    "stock": 50,
+    "seller": "TechGadgetCo",
+    "comments": [],
+    "tags": ["electronics", "mobile", "technology"]
+  },
+  {
+    "name": "Wireless Headphones",
+    "price": 89.99,
+    "description": "Comfortable wireless headphones with noise-canceling technology.",
+    "stock": 100,
+    "seller": "AudioEmpire",
+    "comments": [],
+    "tags": ["audio", "headphones", "wireless"]
+  },
+  {
+    "name": "Gaming Laptop",
+    "price": 1499.99,
+    "description": "A powerful gaming laptop with a high-refresh-rate display.",
+    "stock": 30,
+    "seller": "GameMasters",
+    "comments": [],
+    "tags": ["electronics", "gaming", "laptop"]
+  },
+  {
+    "name": "Fitness Tracker",
+    "price": 49.99,
+    "description": "Track your fitness activities with this sleek and lightweight tracker.",
+    "stock": 80,
+    "seller": "HealthTech",
+    "comments": [],
+    "tags": ["fitness", "wearable", "health"]
+  },
+  {
+    "name": "Cooking Blender",
+    "price": 129.99,
+    "description": "Blend, chop, and puree with this versatile cooking blender.",
+    "stock": 40,
+    "seller": "KitchenMasters",
+    "comments": [],
+    "tags": ["kitchen", "cooking", "appliances"]
+  },
+  {
+    "name": "4K Smart TV",
+    "price": 799.99,
+    "description": "Immerse yourself in stunning visuals with this 4K smart TV.",
+    "stock": 25,
+    "seller": "HomeElectronics",
+    "comments": [],
+    "tags": ["electronics", "TV", "home"]
+  },
+  {
+    "name": "Digital Camera",
+    "price": 399.99,
+    "description": "Capture beautiful moments with this high-resolution digital camera.",
+    "stock": 60,
+    "seller": "PhotoPros",
+    "comments": [],
+    "tags": ["electronics", "photography", "camera"]
+  },
+  {
+    "name": "Portable Speaker",
+    "price": 69.99,
+    "description": "Take your music anywhere with this compact and powerful portable speaker.",
+    "stock": 120,
+    "seller": "AudioEmpire",
+    "comments": [],
+    "tags": ["audio", "speaker", "portable"]
+  },
+  {
+    "name": "Smart Thermostat",
+    "price": 129.99,
+    "description": "Control your home's temperature smartly with this intuitive smart thermostat.",
+    "stock": 35,
+    "seller": "HomeTechSolutions",
+    "comments": [],
+    "tags": ["electronics", "home", "smart"]
+  },
+  {
+    "name": "Laptop Backpack",
+    "price": 49.99,
+    "description": "Stylish and durable backpack designed to carry and protect your laptop.",
+    "stock": 90,
+    "seller": "TechGearHub",
+    "comments": [],
+    "tags": ["accessories", "laptop", "travel"]
+  },
+  {
+    "name": "Wireless Mouse",
+    "price": 29.99,
+    "description": "Ergonomic wireless mouse for smooth and precise control.",
+    "stock": 70,
+    "seller": "TechGearHub",
+    "comments": [],
+    "tags": ["electronics", "accessories", "mouse"]
+  },
+  {
+    "name": "Home Security Camera",
+    "price": 119.99,
+    "description": "Keep an eye on your home with this advanced home security camera.",
+    "stock": 50,
+    "seller": "HomeTechSolutions",
+    "comments": [],
+    "tags": ["electronics", "security", "home"]
+  },
+  {
+    "name": "Coffee Maker",
+    "price": 79.99,
+    "description": "Brew your favorite coffee with this efficient and stylish coffee maker.",
+    "stock": 45,
+    "seller": "KitchenMasters",
+    "comments": [],
+    "tags": ["kitchen", "appliances", "coffee"]
+  },
+  {
+    "name": "Bluetooth Earbuds",
+    "price": 59.99,
+    "description": "Wireless earbuds with crystal-clear sound and long-lasting battery life.",
+    "stock": 80,
+    "seller": "AudioEmpire",
+    "comments": [],
+    "tags": ["audio", "earbuds", "wireless"]
+  },
+  {
+    "name": "Smart Doorbell",
+    "price": 149.99,
+    "description": "Enhance your home security with this smart video doorbell.",
+    "stock": 30,
+    "seller": "HomeTechSolutions",
+    "comments": [],
+    "tags": ["electronics", "security", "home"]
+  },
+  {
+    "name": "Fitness Dumbbells",
+    "price": 29.99,
+    "description": "High-quality dumbbells for effective home workouts.",
+    "stock": 100,
+    "seller": "HealthTech",
+    "comments": [],
+    "tags": ["fitness", "workout", "health"]
+  },
+  {
+    "name": "Chemise en coton rayée",
+    "price": 39.99,
+    "description": "Chemise élégante en coton avec des rayures fines.",
+    "stock": 50,
+    "seller": "FashionTrends",
+    "comments": [],
+    "tags": ["clothing", "shirt", "cotton"]
+  },
+  {
+    "name": "Robe d'été légère",
+    "price": 49.99,
+    "description": "Robe d'été légère et confortable pour les journées ensoleillées.",
+    "stock": 30,
+    "seller": "SummerStyleCo",
+    "comments": [],
+    "tags": ["clothing", "dress", "summer"]
+  },
+  {
+    "name": "Jean slim délavé",
+    "price": 59.99,
+    "description": "Jean slim délavé pour un look décontracté et tendance.",
+    "stock": 40,
+    "seller": "DenimExpress",
+    "comments": [],
+    "tags": ["clothing", "jeans", "denim"]
+  },
+  {
+    "name": "Pull en laine à col roulé",
+    "price": 79.99,
+    "description": "Pull chaud en laine avec un col roulé pour les jours frais.",
+    "stock": 25,
+    "seller": "WinterWardrobe",
+    "comments": [],
+    "tags": ["clothing", "sweater", "wool"]
+  },
+  {
+    "name": "T-shirt imprimé vintage",
+    "price": 29.99,
+    "description": "T-shirt décontracté avec un imprimé vintage pour un style rétro.",
+    "stock": 60,
+    "seller": "VintageVibes",
+    "comments": [],
+    "tags": ["clothing", "t-shirt", "vintage"]
+  },
+  {
+    "name": "Costume élégant pour homme",
+    "price": 149.99,
+    "description": "Costume élégant pour homme parfait pour les occasions spéciales.",
+    "stock": 20,
+    "seller": "FormalFashion",
+    "comments": [],
+    "tags": ["clothing", "suit", "formal"]
+  },
+  {
+    "name": "Chaussures de sport légères",
+    "price": 69.99,
+    "description": "Chaussures de sport légères pour un confort optimal pendant l'exercice.",
+    "stock": 35,
+    "seller": "ActiveFootwear",
+    "comments": [],
+    "tags": ["clothing", "shoes", "sport"]
+  },
+  {
+    "name": "Jupe midi en lin",
+    "price": 44.99,
+    "description": "Jupe midi élégante en lin pour un look décontracté chic.",
+    "stock": 45,
+    "seller": "SummerStyleCo",
+    "comments": [],
+    "tags": ["clothing", "skirt", "linen"]
+  },
+  {
+    "name": "Veste en cuir classique",
+    "price": 129.99,
+    "description": "Veste en cuir classique pour un style intemporel.",
+    "stock": 30,
+    "seller": "LeatherCrafters",
+    "comments": [],
+    "tags": ["clothing", "jacket", "leather"]
+  },
+  {
+    "name": "Pyjama en flanelle douce",
+    "price": 34.99,
+    "description": "Pyjama confortable en flanelle douce pour des nuits reposantes.",
+    "stock": 50,
+    "seller": "CozyNights",
+    "comments": [],
+    "tags": ["clothing", "pajamas", "flannel"]
+  },
+  {
+    "name": "Set de construction magnétique",
+    "price": 29.99,
+    "description": "Set de construction magnétique pour encourager la créativité des enfants.",
+    "stock": 50,
+    "seller": "CreativeKidsToys",
+    "comments": [],
+    "tags": ["toys", "construction", "magnetic"]
+  },
+  {
+    "name": "Poupée en peluche douce",
+    "price": 19.99,
+    "description": "Poupée en peluche douce idéale pour câliner et jouer.",
+    "stock": 40,
+    "seller": "CuddlyFriends",
+    "comments": [],
+    "tags": ["toys", "doll", "plush"]
+  },
+  {
+    "name": "Circuit de voitures avec looping",
+    "price": 39.99,
+    "description": "Circuit de voitures avec looping pour des heures de plaisir et d'excitation.",
+    "stock": 30,
+    "seller": "SpeedyRacersToys",
+    "comments": [],
+    "tags": ["toys", "cars", "racing"]
+  },
+  {
+    "name": "Jeu de société éducatif",
+    "price": 24.99,
+    "description": "Jeu de société éducatif pour apprendre tout en s'amusant.",
+    "stock": 35,
+    "seller": "EduFunGames",
+    "comments": [],
+    "tags": ["toys", "board game", "educational"]
+  },
+  {
+    "name": "Peluche interactive parlante",
+    "price": 49.99,
+    "description": "Peluche interactive parlante avec fonctionnalités amusantes.",
+    "stock": 25,
+    "seller": "TalkativeToysCo",
+    "comments": [],
+    "tags": ["toys", "plush", "interactive"]
+  },
+  {
+    "name": "Jouet de construction en bois",
+    "price": 34.99,
+    "description": "Jouet de construction en bois pour encourager la coordination et la créativité.",
+    "stock": 45,
+    "seller": "WoodenWondersToys",
+    "comments": [],
+    "tags": ["toys", "wooden", "construction"]
+  },
+  {
+    "name": "Puzzle coloré avec formes",
+    "price": 14.99,
+    "description": "Puzzle coloré avec formes pour le développement cognitif des enfants.",
+    "stock": 60,
+    "seller": "PuzzlePlaytime",
+    "comments": [],
+    "tags": ["toys", "puzzle", "educational"]
+  },
+  {
+    "name": "Robot programmable pour enfants",
+    "price": 79.99,
+    "description": "Robot programmable pour enfants pour apprendre les bases de la programmation.",
+    "stock": 20,
+    "seller": "TechyTotsToys",
+    "comments": [],
+    "tags": ["toys", "robot", "programming"]
+  },
+  {
+    "name": "Pâte à modeler non toxique",
+    "price": 9.99,
+    "description": "Pâte à modeler non toxique pour des heures de création artistique.",
+    "stock": 70,
+    "seller": "CreativeKidsToys",
+    "comments": [],
+    "tags": ["toys", "creative", "art"]
+  },
+  {
+    "name": "Set d'instruments de musique pour enfants",
+    "price": 59.99,
+    "description": "Set d'instruments de musique pour enfants pour découvrir la musique en s'amusant.",
+    "stock": 30,
+    "seller": "MusicalJoyToys",
+    "comments": [],
+    "tags": ["toys", "musical instruments", "kids"]
+  },
+  {
+    "name": "To Kill a Mockingbird",
+    "price": 12.99,
+    "description": "A classic novel by Harper Lee.",
+    "stock": 20,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "classic", "fiction"]
+  },
+  {
+    "name": "1984",
+    "price": 14.99,
+    "description": "George Orwell's dystopian masterpiece.",
+    "stock": 15,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "dystopian", "fiction"]
+  },
+  {
+    "name": "The Great Gatsby",
+    "price": 16.99,
+    "description": "F. Scott Fitzgerald's iconic Jazz Age novel.",
+    "stock": 12,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "classic", "fiction"]
+  },
+  {
+    "name": "Pride and Prejudice",
+    "price": 13.99,
+    "description": "Jane Austen's timeless love story.",
+    "stock": 18,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "romance", "classic"]
+  },
+  {
+    "name": "The Catcher in the Rye",
+    "price": 11.99,
+    "description": "J.D. Salinger's coming-of-age novel.",
+    "stock": 22,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "coming-of-age", "fiction"]
+  },
+  {
+    "name": "Harry Potter and the Sorcerer's Stone",
+    "price": 19.99,
+    "description": "J.K. Rowling's magical debut.",
+    "stock": 8,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "fantasy", "young adult"]
+  },
+  {
+    "name": "The Hobbit",
+    "price": 18.99,
+    "description": "J.R.R. Tolkien's classic fantasy adventure.",
+    "stock": 10,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "fantasy", "adventure"]
+  },
+  {
+    "name": "The Da Vinci Code",
+    "price": 17.99,
+    "description": "Dan Brown's gripping mystery thriller.",
+    "stock": 14,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "mystery", "thriller"]
+  },
+  {
+    "name": "The Alchemist",
+    "price": 15.99,
+    "description": "Paulo Coelho's inspirational novel.",
+    "stock": 16,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "inspirational", "fiction"]
+  },
+  {
+    "name": "The Girl with the Dragon Tattoo",
+    "price": 20.99,
+    "description": "Stieg Larsson's gripping crime novel.",
+    "stock": 11,
+    "seller": "bookseller",
+    "comments": [],
+    "tags": ["books", "crime", "mystery"]
+  }
+]

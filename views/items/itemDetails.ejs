@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails de l'article</title>
+    <link rel="stylesheet" href="/styles/itemDetails.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs', {user: null}) %>
+    <div class="container">
+      <h1>Détails de l'article</h1>
+      <div class="item-details">
+        <h2><%= item.name %></h2>
+        <p><strong>Prix:</strong> <%= item.price %> €</p>
+        <p><strong>Description:</strong> <%= item.description %></p>
+        <p><strong>Stock:</strong> <%= item.stock %> pièces</p>
+        <form id="addCartButton">
+          <button type="submit" class="add-to-cart-button">
+            Ajouter au panier
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="keepShoppingModal" class="modal-container">
+      <div class="modal">
+        <h3>Item ajouté au panier</h3>
+        <p>Voulez-vous accéder à votre panier ou continuer votre shopping ?</p>
+        <div class="modal-buttons">
+          <a href="/cart">
+            <button action>Accéder au panier</button>
+          </a>
+          <button id="continueShoppingButton">Continuer le shopping</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("addCartButton")
+      .addEventListener("submit", (event) => {
+        event.preventDefault();
+        fetch("/item/addCart/<%= item._id %>", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => {
+            document.getElementById("keepShoppingModal").classList.add("show");
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => console.log(error));
+      });
+
+    document
+      .getElementById("continueShoppingButton")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("keepShoppingModal").classList.remove("show");
+      });
+  </script>
+</html>

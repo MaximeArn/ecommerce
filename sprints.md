@@ -50,8 +50,6 @@
 - ### Fourth phase : Admin part.
 
   - [x] In home view if user is admin add a /admin link in navbar
-  - [ ] Create a addItem page.
-  - [ ] Link it to a corresponding method.
   - [x] Create an error 403 view
   - [x] in admin middleware render this view
 

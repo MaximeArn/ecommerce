@@ -40,12 +40,14 @@
   - [x] implement a seller middleware that autorize only sellers
   - [x] on myItems return a view that map on items that belongs to the user
   - [ ] allow user to modify the item :
-    - [ ] implement an updateItem route
-    - [ ] on get return a view that contains a form
-    - [ ] on post (sent by the form) perform the changes
-  - [ ] allow user to delete the item :
-    - [ ] add a "delete" button at the end of the updateItem view
-  - [ ] allow user to add an item
+    - [x] implement an updateItem route
+    - [x] on get return a view that contains a form
+    - [x] on post (sent by the form) perform the changes
+  - [x] allow user to delete the item :
+    - [x] add a "delete" button at the end of the updateItem view
+  - [ ] allow user to add an item :
+    - [ ] add an addItem view
+    - [ ] implement a createItem method
 
 - ### Fourth phase : Admin part.
 

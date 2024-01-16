@@ -21,7 +21,6 @@
           id="name"
           name="name"
           placeholder="<%= item.name %>"
-          required
         />
 
         <label for="price">Prix:</label>
@@ -31,7 +30,6 @@
           name="price"
           step="0.01"
           placeholder="<%= item.price %>"
-          required
         />
 
         <label for="description">Description:</label>
@@ -39,7 +37,6 @@
           id="description"
           name="description"
           placeholder="<%= item.description %>"
-          required
         ></textarea>
 
         <label for="stock">Stock:</label>
@@ -48,7 +45,6 @@
           id="stock"
           name="stock"
           placeholder="<%= item.stock %>"
-          required
         />
 
         <div class="separator"></div>
@@ -56,7 +52,8 @@
         <label for="tags">Tags:</label>
         <div id="tagsContainer">
           <% item.tags.forEach(function(tag) { %>
-          <span class="tag"><%= tag %></span>
+          <input type="hidden" value="<%= tag %>" />
+          <span id="<%= tag%>" class="tag"><%= tag %></span>
           <% }); %>
         </div>
 
@@ -78,9 +75,7 @@
         </div>
         <div class="separator"></div>
 
-        <button id="submit-form" type="submit">
-          Enregistrer les modifications
-        </button>
+        <button id="submit-form">Enregistrer les modifications</button>
       </div>
     </form>
     <form action="/item/<%= item._id %>/delete" method="POST">
@@ -88,19 +83,65 @@
     </form>
 
     <script>
-      function addTag() {
+      const item = JSON.parse(`<%- JSON.stringify(item) %>`);
+
+      document
+        .getElementById("submit-form")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          updateItemDetails();
+        });
+      const addTag = () => {
         const tagsInput = document.getElementById("tagsInput");
         const tagsContainer = document.getElementById("tagsContainer");
-        const tagValue = tagsInput.value.trim();
+        const tagValue = tagsInput.value.trim().toLowerCase();
 
         if (tagValue !== "") {
           const tagElement = document.createElement("span");
           tagElement.className = "tag";
+          tagElement.id = tagValue;
           tagElement.textContent = tagValue;
           tagsContainer.appendChild(tagElement);
+          item.tags.push(tagValue);
           tagsInput.value = "";
         }
-      }
+      };
+
+      const removeTag = () => {
+        const tagsInput = document.getElementById("tagsInput");
+        const tagsContainer = document.getElementById("tagsContainer");
+        const tagValue = tagsInput.value.trim().toLowerCase();
+
+        if (tagValue !== "") {
+          tagElement = document.getElementById(tagValue);
+          if (!tagElement) return console.error("this tag does not exist.");
+          tagElement.remove();
+          tagsInput.value = "";
+        }
+      };
+
+      const updateItemDetails = () => {
+        const { value: name } = document.getElementById("name");
+        const { value: price } = document.getElementById("price");
+        const { value: description } = document.getElementById("description");
+        const { value: stock } = document.getElementById("stock");
+
+        const itemDetails = {
+          name,
+          price,
+          description,
+          stock,
+          tags: item.tags,
+        };
+        console.log(itemDetails);
+        fetch(`http://localhost:6543/item/${item._id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(itemDetails),
+        });
+      };
     </script>
   </body>
 </html>

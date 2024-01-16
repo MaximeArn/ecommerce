@@ -21,6 +21,7 @@ module.exports = {
       next(error);
     }
   },
+
   renderItemDetail: async ({ params: { id } }, res, next) => {
     try {
       const [item] = await Item.find({ _id: id });
@@ -40,6 +41,7 @@ module.exports = {
       next(error);
     }
   },
+
   removeItemFromCart: async (
     { params: { itemId }, user: { id } },
     res,
@@ -57,6 +59,28 @@ module.exports = {
       }
       await user.save();
       res.end();
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  updateItem: async ({ params: { id }, body }, res, next) => {
+    try {
+      const item = await Item.findOne({ _id: id });
+      const filteredBodyEntries = Object.entries(body).filter(
+        ([key, value]) => {
+          if (typeof value === "string") {
+            value = value.trim();
+          }
+          if (value !== "") {
+            return [key, value];
+          }
+        }
+      );
+      filteredBodyEntries.forEach(([key, value]) => {
+        item[key] = value;
+      });
+      await item.save();
     } catch (error) {
       next(error);
     }

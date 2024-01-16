@@ -116,6 +116,7 @@
           tagElement = document.getElementById(tagValue);
           if (!tagElement) return console.error("this tag does not exist.");
           tagElement.remove();
+          item.tags = item.tags.filter((tag) => tag !== tagValue);
           tagsInput.value = "";
         }
       };

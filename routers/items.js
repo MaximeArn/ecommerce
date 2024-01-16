@@ -4,7 +4,6 @@ const {
   renderItemDetail,
   addItemToCart,
   removeItemFromCart,
-  updateItem,
 } = require("../controllers/items");
 
 const itemsRouter = Router();
@@ -13,6 +12,5 @@ itemsRouter.post("/feedDatabase", feedDatabase);
 itemsRouter.get("/:id", renderItemDetail);
 itemsRouter.post("/addCart/:id", addItemToCart);
 itemsRouter.post("/removeFromCart/:itemId", removeItemFromCart);
-itemsRouter.patch("/:id", updateItem);
 
 module.exports = itemsRouter;

@@ -78,12 +78,25 @@
         <button id="submit-form">Enregistrer les modifications</button>
       </div>
     </form>
-    <form action="/item/<%= item._id %>/delete" method="POST">
-      <button type="submit" class="delete-button">Supprimer l'Article</button>
-    </form>
+
+    <button id="delete-item" class="delete-button">Supprimer l'Article</button>
 
     <script>
       const item = JSON.parse(`<%- JSON.stringify(item) %>`);
+
+      document
+        .getElementById("delete-item")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          fetch(`http://localhost:6543/seller/item/${item._id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }).then((response) => {
+            location.href = "/seller";
+          });
+        });
 
       document
         .getElementById("submit-form")
@@ -135,12 +148,14 @@
           tags: item.tags,
         };
         console.log(itemDetails);
-        fetch(`http://localhost:6543/item/${item._id}`, {
+        fetch(`http://localhost:6543/seller/item/${item._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(itemDetails),
+        }).then((response) => {
+          location.reload();
         });
       };
     </script>

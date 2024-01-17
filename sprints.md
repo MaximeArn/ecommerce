@@ -45,9 +45,9 @@
     - [x] on post (sent by the form) perform the changes
   - [x] allow user to delete the item :
     - [x] add a "delete" button at the end of the updateItem view
-  - [ ] allow user to add an item :
-    - [ ] add an addItem view
-    - [ ] implement a createItem method
+  - [x] allow user to add an item :
+    - [x] add an addItem view
+    - [x] implement a createItem method
 
 - ### Fourth phase : Admin part.
 
@@ -58,9 +58,12 @@
 - ### Fifth phase : Search bar.
 
   - [ ] Design a searchBar in the navbar
-  - [ ] On submit make a request to filter items.
-  - [ ] On server side get revelant items based on either tags or name or description.
-  - [ ] Return a searchResults view that maps on the response.
+  - [ ] On submit make a request to return filter items.
+  - [ ] On server side get revelant items based on either tags or name or description :
+    - [ ] First check items that includes searched term in their name
+    - [ ] if no results search for items that includes the searched term in their tags
+    - [ ] Finaly if nothing search by description
+  - [ ] Use the same view `home` and fill it with filtered items
 
 - ### Sixth phase : code refacto.
 

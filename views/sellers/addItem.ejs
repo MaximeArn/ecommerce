@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter un article</title>
+    <link rel="stylesheet" href="/styles/updateItem.css" />
+  </head>
+  <body>
+    <%- include("../partials/navbar.ejs", { user : null }) %>
+
+    <header>
+      <h1>Ajouter un article</h1>
+    </header>
+
+    <form id="updateForm">
+      <div class="container">
+        <label for="name">Nom de l'article:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="price">Prix:</label>
+        <input type="number" id="price" name="price" step="0.01" required />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" required />
+
+        <div class="separator"></div>
+
+        <label for="tags">Tags:</label>
+        <div id="tagsContainer"></div>
+
+        <label for="tagsInput">Ajouter/Supprimer un Tag:</label>
+        <div class="label-section">
+          <input
+            type="text"
+            id="tagsInput"
+            name="tagsInput"
+            placeholder="Ajouter ou supprimer un tag"
+          />
+
+          <div class="label-buttons">
+            <button type="button" onclick="addTag()">Ajouter</button>
+            <button id="deleteTag" type="button" onclick="removeTag()">
+              Supprimer
+            </button>
+          </div>
+        </div>
+        <div class="separator"></div>
+
+        <button id="submit-form">Ajouter l'item</button>
+      </div>
+    </form>
+  </body>
+  <script>
+    let tags = [];
+
+    document
+      .getElementById("submit-form")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        createItem();
+      });
+
+    const addTag = () => {
+      const tagsInput = document.getElementById("tagsInput");
+      const tagsContainer = document.getElementById("tagsContainer");
+      const tagValue = tagsInput.value.trim().toLowerCase();
+
+      if (tagValue !== "") {
+        const tagElement = document.createElement("span");
+        tagElement.className = "tag";
+        tagElement.id = tagValue;
+        tagElement.textContent = tagValue;
+        tagsContainer.appendChild(tagElement);
+        tags.push(tagValue);
+        tagsInput.value = "";
+      }
+    };
+
+    const removeTag = () => {
+      const tagsInput = document.getElementById("tagsInput");
+      const tagsContainer = document.getElementById("tagsContainer");
+      const tagValue = tagsInput.value.trim().toLowerCase();
+
+      if (tagValue !== "") {
+        tagElement = document.getElementById(tagValue);
+        if (!tagElement) return console.error("this tag does not exist.");
+        tagElement.remove();
+        tags = tags.filter((tag) => tag !== tagValue);
+        tagsInput.value = "";
+      }
+    };
+
+    const createItem = () => {
+      const { value: name } = document.getElementById("name");
+      const { value: price } = document.getElementById("price");
+      const { value: description } = document.getElementById("description");
+      const { value: stock } = document.getElementById("stock");
+
+      if (tags.length < 3)
+        return console.log(
+          "You have to add at list 3 tags to describe your item"
+        );
+
+      const itemDetails = {
+        name,
+        price,
+        description,
+        stock,
+        tags,
+      };
+
+      fetch(`http://localhost:6543/seller/addItem`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(itemDetails),
+      })
+        .then((response) => {
+          location.href = "/seller";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+  </script>
+</html>

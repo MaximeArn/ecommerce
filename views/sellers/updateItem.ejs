@@ -147,7 +147,6 @@
           stock,
           tags: item.tags,
         };
-        console.log(itemDetails);
         fetch(`http://localhost:6543/seller/item/${item._id}`, {
           method: "PATCH",
           headers: {

@@ -17,6 +17,13 @@ module.exports = {
       next(error);
     }
   },
+  renderCreateItem: async (req, res, next) => {
+    try {
+      res.render("sellers/addItem.ejs");
+    } catch (error) {
+      next(error);
+    }
+  },
   updateItem: async ({ params: { id }, body }, res, next) => {
     try {
       const item = await Item.findOne({ _id: id });
@@ -44,6 +51,20 @@ module.exports = {
     try {
       await Item.deleteOne({ _id: id });
       res.status(200).send("Item has been deleted");
+    } catch (error) {
+      next(error);
+    }
+  },
+  createItem: async ({ body, user }, res, next) => {
+    try {
+      if (body.tags.length < 3)
+        throw new Error("you need at least 3 tags to describe your item.");
+      Object.entries(body).map(([key, value]) => {
+        if (typeof value === "string" && value.trim() === "")
+          throw new Error(`${key} field is required.`);
+      });
+      await new Item({ ...body, seller: user.username }).save();
+      res.end();
     } catch (error) {
       next(error);
     }

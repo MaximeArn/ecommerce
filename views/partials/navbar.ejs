@@ -6,9 +6,9 @@
     <button id="searchBar-button" type="submit">Rechercher</button>
   </div>
   <div class="nav-links">
-    <% if(user && user.role === "admin"){ %>
+    <% if(role === "admin"){ %>
     <a href="/admin">Admin</a>
-    <% } %> <% if(user && user.role === "seller"){ %>
+    <% } %> <% if(role === "seller"){ %>
     <a href="/seller">MyItems</a>
     <% } %>
     <a href="/cart">Cart</a>
@@ -32,8 +32,6 @@
             "Content-Type": "application/json",
           },
         }).catch((error) => console.log(error));
-      } else if (searchQuery === "") {
-        location.href = "/home";
       }
     });
 </script>

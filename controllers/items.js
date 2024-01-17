@@ -22,10 +22,10 @@ module.exports = {
     }
   },
 
-  renderItemDetail: async ({ params: { id } }, res, next) => {
+  renderItemDetail: async ({ params: { id }, user: { role } }, res, next) => {
     try {
       const [item] = await Item.find({ _id: id });
-      res.render("items/itemDetails", { item });
+      res.render("items/itemDetails", { item, role });
     } catch (error) {
       next(error);
     }

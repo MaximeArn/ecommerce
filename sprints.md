@@ -58,15 +58,16 @@
 - ### Fifth phase : Search bar.
 
   - [x] Design a searchBar in the navbar
-  - [ ] On submit make a request to return filter items.
+  - [x] On submit make a request to return filter items.
   - [ ] On server side get revelant items based on either tags or name or description :
-    - [ ] First check items that includes searched term in their name
+    - [x] First check items that includes searched term in their name
     - [ ] if no results search for items that includes the searched term in their tags
     - [ ] Finaly if nothing search by description
   - [ ] Use the same view `home` and fill it with filtered items
 
 - ### Sixth phase : code refacto.
 
+  - [ ] Search button style is broken on addItem and updateItem views
   - [ ] Check if it is possible to factorize some html using ejs partials
   - [ ] sort controllers methods
 

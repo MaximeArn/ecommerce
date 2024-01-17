@@ -1,25 +1,29 @@
 const Item = require("../models/item");
 
 module.exports = {
-  renderSellerPage: async (req, res, next) => {
+  renderSellerPage: async ({ user: { role, username } }, res, next) => {
     try {
-      const sellerItems = await Item.find({ seller: req.user.username });
-      res.render("sellers/sellerPage.ejs", { items: sellerItems });
+      const sellerItems = await Item.find({ seller: username });
+      res.render("sellers/sellerPage.ejs", { items: sellerItems, role });
     } catch (error) {
       next(error);
     }
   },
-  renderUpdateItemPage: async ({ params: { itemId } }, res, next) => {
+  renderUpdateItemPage: async (
+    { params: { itemId }, user: { role } },
+    res,
+    next
+  ) => {
     try {
       const item = await Item.findOne({ _id: itemId });
-      res.render("sellers/updateItem.ejs", { item });
+      res.render("sellers/updateItem.ejs", { item, role });
     } catch (error) {
       next(error);
     }
   },
-  renderCreateItem: async (req, res, next) => {
+  renderCreateItem: async ({ user: { role } }, res, next) => {
     try {
-      res.render("sellers/addItem.ejs");
+      res.render("sellers/addItem.ejs", { role });
     } catch (error) {
       next(error);
     }

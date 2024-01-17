@@ -2,13 +2,13 @@ const User = require("../models/user");
 const Item = require("../models/item");
 module.exports = {
   renderProfile: ({ user }, res, next) => {
-    res.render("users/profile", { user });
+    res.render("users/profile", { user, role: user.role });
   },
-  renderHome: async (req, res, next) => {
+  renderHome: async ({ user: { role } }, res, next) => {
     try {
       console.log("renderHome");
       const items = await Item.find();
-      res.render("users/home", { items, user: req.user });
+      res.render("users/home", { items, role });
     } catch (error) {
       next(error);
     }
@@ -21,7 +21,10 @@ module.exports = {
       parsedUser.cart = groupItemsById(user.cart);
       parsedUser.totalCart = getCartTotal(user.cart);
       parsedUser.cartLength = user.cart.length;
-      res.render("users/cartDetails.ejs", { user: parsedUser });
+      res.render("users/cartDetails.ejs", {
+        user: parsedUser,
+        role: user.role,
+      });
     } catch (error) {
       next(error);
     }
@@ -38,10 +41,19 @@ module.exports = {
     }
   },
 
-  searchItems: async ({ params: { searchQuery } }, res, next) => {
+  searchItems: async (
+    { params: { searchQuery }, user: { role } },
+    res,
+    next
+  ) => {
     try {
-      console.log(searchQuery);
-      res.end();
+      searchQuery = searchQuery.toLowerCase() + " ";
+      const filteredItems = await Item.find({
+        name: { $regex: searchQuery, $options: "i" },
+      });
+      console.log(filteredItems);
+      //TO FIX: the page is rendered but because I used a button instead of a link, the href is not changing so the page is not reloading. But in the response of the request the view is well included.
+      res.render("users/home.ejs", { items: filteredItems, role });
     } catch (error) {
       next(error);
     }

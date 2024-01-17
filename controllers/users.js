@@ -6,6 +6,7 @@ module.exports = {
   },
   renderHome: async (req, res, next) => {
     try {
+      console.log("renderHome");
       const items = await Item.find();
       res.render("users/home", { items, user: req.user });
     } catch (error) {
@@ -36,7 +37,18 @@ module.exports = {
       next(error);
     }
   },
+
+  searchItems: async ({ params: { searchQuery } }, res, next) => {
+    try {
+      console.log(searchQuery);
+      res.end();
+    } catch (error) {
+      next(error);
+    }
+  },
 };
+
+// utils :
 
 function groupItemsById(cart) {
   const groupedItems = {};

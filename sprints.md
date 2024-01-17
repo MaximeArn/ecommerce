@@ -57,7 +57,7 @@
 
 - ### Fifth phase : Search bar.
 
-  - [ ] Design a searchBar in the navbar
+  - [x] Design a searchBar in the navbar
   - [ ] On submit make a request to return filter items.
   - [ ] On server side get revelant items based on either tags or name or description :
     - [ ] First check items that includes searched term in their name

@@ -2,8 +2,8 @@
 <div class="navbar">
   <a class="home" href="/home">Accueil</a>
   <div class="search-bar">
-    <input type="text" placeholder="Rechercher" />
-    <button type="submit">Rechercher</button>
+    <input id="searchBar-input" type="text" placeholder="Rechercher" />
+    <button id="searchBar-button" type="submit">Rechercher</button>
   </div>
   <div class="nav-links">
     <% if(user && user.role === "admin"){ %>
@@ -15,3 +15,25 @@
     <a href="/profile">Profil</a>
   </div>
 </div>
+<script>
+  document
+    .getElementById("searchBar-button")
+    .addEventListener("click", (event) => {
+      event.preventDefault();
+      const searchQuery = document
+        .getElementById("searchBar-input")
+        .value.trim();
+
+      console.log(searchQuery);
+      if (searchQuery !== "") {
+        fetch(`http://localhost:6543/home/${searchQuery}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).catch((error) => console.log(error));
+      } else if (searchQuery === "") {
+        location.href = "/home";
+      }
+    });
+</script>

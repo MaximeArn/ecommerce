@@ -11,7 +11,11 @@
 
     <div class="container">
       <header>
+        <%if (isFilteredResults){%>
+        <h1>Articles correspondants à votre recherche :</h1>
+        <%} else {%>
         <h1>Articles en vente sur le site :</h1>
+        <%}%>
       </header>
 
       <div class="item-list">

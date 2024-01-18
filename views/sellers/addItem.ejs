@@ -16,16 +16,29 @@
     <form id="updateForm">
       <div class="container">
         <label for="name">Nom de l'article:</label>
-        <input type="text" id="name" name="name" required />
+
+        <input class="fields" type="text" id="name" name="name" required />
 
         <label for="price">Prix:</label>
-        <input type="number" id="price" name="price" step="0.01" required />
+        <input
+          class="fields"
+          type="number"
+          id="price"
+          name="price"
+          step="0.01"
+          required
+        />
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea
+          class="fields"
+          id="description"
+          name="description"
+          required
+        ></textarea>
 
         <label for="stock">Stock:</label>
-        <input type="number" id="stock" name="stock" required />
+        <input class="fields" type="number" id="stock" name="stock" required />
 
         <div class="separator"></div>
 
@@ -35,6 +48,7 @@
         <label for="tagsInput">Ajouter/Supprimer un Tag:</label>
         <div class="label-section">
           <input
+            class="fields"
             type="text"
             id="tagsInput"
             name="tagsInput"

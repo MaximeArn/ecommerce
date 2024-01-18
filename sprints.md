@@ -61,9 +61,7 @@
   - [x] On submit make a request to return filter items.
   - [ ] On server side get revelant items based on either tags or name or description :
     - [x] First check items that includes searched term in their name
-    - [ ] if no results search for items that includes the searched term in their tags
-    - [ ] Finaly if nothing search by description
-  - [ ] Use the same view `home` and fill it with filtered items
+    - [x] if no results search for items that includes the searched term in their tags
 
 - ### Sixth phase : code refacto.
 

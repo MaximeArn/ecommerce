@@ -7,10 +7,6 @@ const itemSchema = new mongoose.Schema(
     description: { type: String, required: true },
     stock: { type: Number, required: true },
     seller: { type: String, required: true },
-    comments: {
-      type: [String], //need to be an array of Comment when comment model will be done
-      default: [],
-    },
     tags: { type: [String], default: [] },
   },
   { timestamps: true }

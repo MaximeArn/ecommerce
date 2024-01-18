@@ -6,9 +6,8 @@ module.exports = {
   },
   renderHome: async ({ user: { role } }, res, next) => {
     try {
-      console.log("renderHome");
       const items = await Item.find();
-      res.render("users/home", { items, role });
+      res.render("users/home", { items, role, isFilteredResults: false });
     } catch (error) {
       next(error);
     }
@@ -61,7 +60,11 @@ module.exports = {
           tags: { $in: searchQueryWords },
         });
       }
-      res.render("users/home.ejs", { items: filteredItems, role });
+      res.render("users/home.ejs", {
+        items: filteredItems,
+        role,
+        isFilteredResults: true,
+      });
     } catch (error) {
       next(error);
     }

@@ -47,13 +47,20 @@ module.exports = {
     next
   ) => {
     try {
-      const filteredItems = await Item.find({
+      let filteredItems = await Item.find({
         name: {
           // return name that contains searchQuery followed by a alphabetic symbol or that contains searchQuery as last word
           $regex: `${searchQuery}[^a-zA-Z]|${searchQuery}$`,
           $options: "i",
         },
       });
+      if (filteredItems.length === 0) {
+        // second step if no match by name search in tags
+        const searchQueryWords = searchQuery.split(" ");
+        filteredItems = await Item.find({
+          tags: { $in: searchQueryWords },
+        });
+      }
       res.render("users/home.ejs", { items: filteredItems, role });
     } catch (error) {
       next(error);

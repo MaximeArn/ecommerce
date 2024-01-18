@@ -47,12 +47,13 @@ module.exports = {
     next
   ) => {
     try {
-      searchQuery = searchQuery.toLowerCase() + " ";
       const filteredItems = await Item.find({
-        name: { $regex: searchQuery, $options: "i" },
+        name: {
+          // return name that contains searchQuery followed by a alphabetic symbol or that contains searchQuery as last word
+          $regex: `${searchQuery}[^a-zA-Z]|${searchQuery}$`,
+          $options: "i",
+        },
       });
-      console.log(filteredItems);
-      //TO FIX: the page is rendered but because I used a button instead of a link, the href is not changing so the page is not reloading. But in the response of the request the view is well included.
       res.render("users/home.ejs", { items: filteredItems, role });
     } catch (error) {
       next(error);

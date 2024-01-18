@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/styles/navbar.css" />
 <div class="navbar">
   <a class="home" href="/home">Accueil</a>
-  <div class="search-bar">
+  <form id="search-bar" class="search-bar">
     <input id="searchBar-input" type="text" placeholder="Rechercher" />
     <button id="searchBar-button" type="submit">Rechercher</button>
-  </div>
+  </form>
   <div class="nav-links">
     <% if(role === "admin"){ %>
     <a href="/admin">Admin</a>
@@ -16,22 +16,9 @@
   </div>
 </div>
 <script>
-  document
-    .getElementById("searchBar-button")
-    .addEventListener("click", (event) => {
-      event.preventDefault();
-      const searchQuery = document
-        .getElementById("searchBar-input")
-        .value.trim();
-
-      console.log(searchQuery);
-      if (searchQuery !== "") {
-        fetch(`http://localhost:6543/home/${searchQuery}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).catch((error) => console.log(error));
-      }
-    });
+  document.getElementById("search-bar").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const searchQuery = document.getElementById("searchBar-input").value.trim();
+    if (searchQuery !== "") location.href = `/home/${searchQuery}`;
+  });
 </script>

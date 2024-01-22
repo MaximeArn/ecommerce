@@ -72,7 +72,7 @@
 
   - [x] Search button style is broken on addItem and updateItem views
   - [x] translate every french text.
-  - [ ] check if every views are responsible.
+  - [x] check if every views are responsible.
 
 - ### Last phase :
   - [ ] write a documentation

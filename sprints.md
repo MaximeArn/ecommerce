@@ -63,11 +63,17 @@
     - [x] First check items that includes searched term in their name
     - [x] if no results search for items that includes the searched term in their tags
 
-- ### Sixth phase : code refacto.
+- ### Sixth phase : displaing errors :
 
-  - [ ] Search button style is broken on addItem and updateItem views
+  - [ ] display errors in UI :
+    - [ ] conditionally display an error message if ther is one.
+
+- ### Seventh phase : code refacto.
+
+  - [x] Search button style is broken on addItem and updateItem views
   - [ ] Check if it is possible to factorize some html using ejs partials
   - [ ] sort controllers methods
+  - [ ] translate every french text.
 
 - ### Last phase :
   - [ ] write a documentation

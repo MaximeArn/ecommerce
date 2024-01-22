@@ -30,7 +30,7 @@ module.exports = {
 
       const passwordMatch = await user.comparePassword(password);
       if (!passwordMatch)
-        throw new AuthenticationError("Incorrect password", 401);
+        throw new AuthenticationError("Incorrect password", 404);
 
       const token = jwt.sign({ userId: user.id }, process.env.SECRET_KEY, {
         expiresIn: "1h",

@@ -36,7 +36,7 @@ I made it mainly to train my backend skills that's why I used ChatGpt to feed my
 
 ## How to test :
 
-visit _[ecommerce](http://fillItWhenHosted)_
+visit _[ecommerce](https://ecommerce-lk8b.onrender.com/)_
 
 You can create a new user by your own by registering but if you want to test admin and sellers function you have to use these following credentials :
 

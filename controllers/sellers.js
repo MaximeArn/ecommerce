@@ -31,6 +31,13 @@ module.exports = {
   updateItem: async ({ params: { id }, body }, res, next) => {
     try {
       const item = await Item.findOne({ _id: id });
+      if (body.tags.length < 3)
+        throw new Error("your need at least 3 tags to describe your item");
+      if (body.price !== "" && Number(body.price) <= 0)
+        throw new Error("Price has to be positiv");
+      if (body.stock !== "" && Number(body.stock) <= 0)
+        throw new Error("Stock has to be positiv");
+
       const filteredBodyEntries = Object.entries(body).filter(
         ([key, value]) => {
           if (typeof value === "string") {
@@ -63,6 +70,10 @@ module.exports = {
     try {
       if (body.tags.length < 3)
         throw new Error("you need at least 3 tags to describe your item.");
+      if (body.price !== "" && Number(body.price) <= 0)
+        throw new Error("Price has to be positiv");
+      if (body.stock !== "" && Number(body.stock) <= 0)
+        throw new Error("Stock has to be positiv");
       Object.entries(body).map(([key, value]) => {
         if (typeof value === "string" && value.trim() === "")
           throw new Error(`${key} field is required.`);

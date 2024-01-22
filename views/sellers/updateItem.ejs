@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modifier l'Article</title>
+    <title>Modify Item</title>
     <link rel="stylesheet" href="/styles/updateItem.css" />
     <link
       rel="stylesheet"
@@ -15,12 +15,12 @@
     <%- include("../partials/navbar.ejs", { user : null }) %>
 
     <header>
-      <h1>Modifier l'Article</h1>
+      <h1>Modify item</h1>
     </header>
 
     <form action="/item/<%= item._id %>/update" method="POST" id="updateForm">
       <div class="container">
-        <label for="name">Nom de l'article:</label>
+        <label for="name">Name:</label>
         <input
           class="fields"
           type="text"
@@ -29,7 +29,7 @@
           placeholder="<%= item.name %>"
         />
 
-        <label for="price">Prix:</label>
+        <label for="price">Price:</label>
         <input
           class="fields"
           type="number"
@@ -67,30 +67,30 @@
           <% }); %>
         </div>
 
-        <label for="tagsInput">Ajouter/Supprimer un Tag:</label>
+        <label for="tagsInput">Add/Remove a Tag:</label>
         <div class="label-section">
           <input
             class="fields"
             type="text"
             id="tagsInput"
             name="tagsInput"
-            placeholder="Ajouter ou supprimer un tag"
+            placeholder="Add or remove a tag"
           />
 
           <div class="label-buttons">
-            <button type="button" onclick="addTag()">Ajouter</button>
+            <button type="button" onclick="addTag()">Add</button>
             <button id="deleteTag" type="button" onclick="removeTag()">
-              Supprimer
+              Remove
             </button>
           </div>
         </div>
         <div class="separator"></div>
 
-        <button id="submit-form">Enregistrer les modifications</button>
+        <button id="submit-form">Save changes</button>
       </div>
     </form>
 
-    <button id="delete-item" class="delete-button">Supprimer l'Article</button>
+    <button id="delete-item" class="delete-button">Delete item</button>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"

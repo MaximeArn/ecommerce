@@ -8,7 +8,7 @@ const {
 
 const itemsRouter = Router();
 
-itemsRouter.post("/feedDatabase", feedDatabase);
+// itemsRouter.post("/feedDatabase", feedDatabase);
 itemsRouter.get("/:id", renderItemDetail);
 itemsRouter.post("/addCart/:id", addItemToCart);
 itemsRouter.post("/removeFromCart/:itemId", removeItemFromCart);

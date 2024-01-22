@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/styles/home.css" />
   </head>
   <body>
@@ -12,9 +12,9 @@
     <div class="container">
       <header>
         <%if (isFilteredResults){%>
-        <h1>Articles correspondants à votre recherche :</h1>
+        <h1>Items corresponding to your research :</h1>
         <%} else {%>
-        <h1>Articles en vente sur le site :</h1>
+        <h1>Items on the site :</h1>
         <%}%>
       </header>
 
@@ -23,7 +23,7 @@
         <a href="/item/<%= item._id %>" class="item-card">
           <div class="item-details">
             <h2><%= item.name %></h2>
-            <p><strong>Prix:</strong> <%= item.price %> €</p>
+            <p><strong>Price:</strong> <%= item.price %> €</p>
             <p><strong>Description:</strong> <%= item.description %></p>
           </div>
         </a>

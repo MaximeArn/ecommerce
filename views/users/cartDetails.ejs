@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Détails du Panier</title>
+    <title>Cart Summary</title>
     <link rel="stylesheet" href="/styles/cartDetails.css" />
   </head>
   <body>
     <%- include('../partials/navbar.ejs') %>
 
-    <h1>Détails du Panier</h1>
+    <h1>Cart summary</h1>
     <div class="container cart-container">
       <div class="cart-items">
         <% if (user.cart.length === 0) { %>
 
-        <p>Le panier est vide.</p>
+        <p>Your cart is empty</p>
         <% } else { %>
         <ul class="cart-items-list">
           <% user.cart.forEach(itemGroup => { %>
@@ -24,7 +24,7 @@
               <p>
                 <strong>Description:</strong> <%= itemGroup[0].description %>
               </p>
-              <p><strong>Prix:</strong> <%= itemGroup[0].price %> €</p>
+              <p><strong>Price:</strong> <%= itemGroup[0].price %> €</p>
             </div>
             <div class="quantity-controls">
               <input
@@ -53,9 +53,9 @@
       </div>
 
       <div class="cart-summary">
-        <h2>Résumé du Panier</h2>
-        <p>Total d'articles: <%= user.cartLength%></p>
-        <p>Total du Panier: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
+        <h2>Cart summary</h2>
+        <p>Total d'items: <%= user.cartLength%></p>
+        <p>Total price: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
       </div>
     </div>
     <% if (user.cart.length !== 0) { %>

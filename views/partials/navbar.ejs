@@ -1,9 +1,13 @@
 <link rel="stylesheet" href="/styles/navbar.css" />
 <div class="navbar">
-  <a class="home" href="/home">Accueil</a>
+  <a class="home" href="/home">Home</a>
   <form id="search-bar" class="search-bar">
-    <input id="searchBar-input" type="text" placeholder="Rechercher" />
-    <button id="searchBar-button" type="submit">Rechercher</button>
+    <input
+      id="searchBar-input"
+      type="text"
+      placeholder="books, electronics, clothes..."
+    />
+    <button id="searchBar-button" type="submit">Search</button>
   </form>
   <div class="nav-links">
     <% if(role === "admin"){ %>
@@ -12,7 +16,7 @@
     <a href="/seller">MyItems</a>
     <% } %>
     <a href="/cart">Cart</a>
-    <a href="/profile">Profil</a>
+    <a href="/profile">Profile</a>
   </div>
 </div>
 <script>

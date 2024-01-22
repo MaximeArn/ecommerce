@@ -59,21 +59,20 @@
 
   - [x] Design a searchBar in the navbar
   - [x] On submit make a request to return filter items.
-  - [ ] On server side get revelant items based on either tags or name or description :
+  - [x] On server side get revelant items based on either tags or name or description :
     - [x] First check items that includes searched term in their name
     - [x] if no results search for items that includes the searched term in their tags
 
 - ### Sixth phase : displaing errors :
 
-  - [ ] display errors in UI :
-    - [ ] conditionally display an error message if ther is one.
+  - [x] display errors in UI :
+    - [x] conditionally display an error message if ther is one.
 
 - ### Seventh phase : code refacto.
 
   - [x] Search button style is broken on addItem and updateItem views
-  - [ ] Check if it is possible to factorize some html using ejs partials
-  - [ ] sort controllers methods
-  - [ ] translate every french text.
+  - [x] translate every french text.
+  - [ ] check if every views are responsible.
 
 - ### Last phase :
   - [ ] write a documentation

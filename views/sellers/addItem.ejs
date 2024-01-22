@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajouter un article</title>
+    <title>Add an item</title>
     <link rel="stylesheet" href="/styles/updateItem.css" />
     <link
       rel="stylesheet"
@@ -15,16 +15,16 @@
     <%- include("../partials/navbar.ejs", { user : null }) %>
 
     <header>
-      <h1>Ajouter un article</h1>
+      <h1>Add an item</h1>
     </header>
 
     <form id="updateForm">
       <div class="container">
-        <label for="name">Nom de l'article:</label>
+        <label for="name">Name:</label>
 
         <input class="fields" type="text" id="name" name="name" required />
 
-        <label for="price">Prix:</label>
+        <label for="price">Price:</label>
         <input
           class="fields"
           type="number"
@@ -50,26 +50,26 @@
         <label for="tags">Tags:</label>
         <div id="tagsContainer"></div>
 
-        <label for="tagsInput">Ajouter/Supprimer un Tag:</label>
+        <label for="tagsInput">Add/Remove a tag:</label>
         <div class="label-section">
           <input
             class="fields"
             type="text"
             id="tagsInput"
             name="tagsInput"
-            placeholder="Ajouter ou supprimer un tag"
+            placeholder="Add or remove a tag "
           />
 
           <div class="label-buttons">
-            <button type="button" onclick="addTag()">Ajouter</button>
+            <button type="button" onclick="addTag()">Add</button>
             <button id="deleteTag" type="button" onclick="removeTag()">
-              Supprimer
+              Remove
             </button>
           </div>
         </div>
         <div class="separator"></div>
 
-        <button id="submit-form">Ajouter l'item</button>
+        <button id="submit-form">Add item</button>
       </div>
     </form>
   </body>

@@ -8,8 +8,8 @@ const connectDb = require("./db/dbConection");
 const authMiddleware = require("./middlewares/auth");
 const adminsMiddleware = require("./middlewares/admins");
 const sellerMiddleware = require("./middlewares/sellers");
-const errorsMiddleware = require("./middlewares/errorsMiddleware");
-const loggerMiddleware = require("./middlewares/loggerMiddleware");
+const errorsMiddleware = require("./middlewares/errors");
+const loggerMiddleware = require("./middlewares/logger");
 
 const itemsRouter = require("./routers/items");
 const authRouter = require("./routers/auth");

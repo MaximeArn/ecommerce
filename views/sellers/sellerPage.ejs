@@ -3,27 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Items du Vendeur</title>
+    <title>Seller items</title>
     <link rel="stylesheet" href="/styles/sellerItems.css" />
   </head>
   <body>
     <%- include('../partials/navbar.ejs' , {user: null}) %>
     <div class="container">
       <header>
-        <h1>Vos articles</h1>
+        <h1>Your items :</h1>
       </header>
 
       <div class="item-list">
         <% if (items.length === 0) { %>
-        <p>Aucun article disponible pour ce vendeur.</p>
+        <p>You do not have any item</p>
         <% } else { %> <% items.forEach(item => { %>
         <a href="seller/item/<%= item._id %>" class="item-card">
           <div class="item-details">
             <h2><%= item.name %></h2>
             <p class="item-description"><%= item.description %></p>
             <div class="item-meta">
-              <p><strong>Prix:</strong> <%= item.price %> €</p>
-              <p><strong>Stock:</strong> <%= item.stock %> pièces</p>
+              <p><strong>Price:</strong> <%= item.price %> €</p>
+              <p><strong>Stock:</strong> <%= item.stock %> pieces</p>
             </div>
           </div>
         </a>

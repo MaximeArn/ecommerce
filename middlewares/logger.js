@@ -21,9 +21,9 @@ module.exports = (err, req, res, next) => {
   };
 
   err.statusCode === 401
-    ? res.status(401).render("errors/error401.ejs", { err })
+    ? res.status(401).render("errors/error401.ejs", { error: err })
     : err.statusCode === 403
-    ? res.status(403).render("errors/error403.ejs", { err })
+    ? res.status(403).render("errors/error403.ejs", { error: err })
     : res.status(err.statusCode || 500).send(err);
 };
 

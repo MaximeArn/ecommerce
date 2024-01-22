@@ -3,24 +3,24 @@ const Item = require("../models/item");
 const User = require("../models/user");
 
 module.exports = {
-  feedDatabase: async (req, res, next) => {
-    try {
-      const data = fs.readFileSync(__dirname + "/../products.json");
-      const items = JSON.parse(data);
-      let insertionNumber = 0;
-      for (const item of items) {
-        const newItem = new Item(item);
-        console.log(newItem);
-        await newItem.save();
-        insertionNumber++;
-      }
-      res.end(
-        `Insertion terminée : ${insertionNumber} items have been iserted`
-      );
-    } catch (error) {
-      next(error);
-    }
-  },
+  // feedDatabase: async (req, res, next) => {
+  //   try {
+  //     const data = fs.readFileSync(__dirname + "/../products.json");
+  //     const items = JSON.parse(data);
+  //     let insertionNumber = 0;
+  //     for (const item of items) {
+  //       const newItem = new Item(item);
+  //       console.log(newItem);
+  //       await newItem.save();
+  //       insertionNumber++;
+  //     }
+  //     res.end(
+  //       `Insertion terminée : ${insertionNumber} items have been iserted`
+  //     );
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // },
 
   renderItemDetail: async ({ params: { id }, user: { role } }, res, next) => {
     try {

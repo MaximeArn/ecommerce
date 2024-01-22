@@ -22,7 +22,7 @@
   justify-content: center;
 }
 
-.search-bar input {
+#searchBar-input {
   width: 35%;
   padding: 15px;
   border: 1px solid #ccc;
@@ -30,7 +30,8 @@
   outline: none;
 }
 
-.search-bar button {
+#searchBar-button {
+  margin: 0;
   padding: 10px;
   background-color: #4caf50;
   color: white;

@@ -35,8 +35,9 @@ strong {
   color: #333;
 }
 
-/* Style du bouton "Ajouter au panier" */
 .add-to-cart-button {
+  margin: 0;
+  margin-top: 20px;
   background-color: #28a745;
   color: #ffffff;
   padding: 10px 20px;

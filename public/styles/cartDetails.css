@@ -103,3 +103,27 @@ strong {
 #emptyCartButton:hover {
   background-color: #cc0000;
 }
+
+@media (max-width: 1365px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .cart-summary {
+    width: 100%;
+    padding: 0;
+  }
+
+  .summary-layout {
+    width: 100% -40px;
+    padding: 20px;
+  }
+
+  .cart-items {
+    width: 100%;
+  }
+
+  .cart-item {
+    width: 100% - 40px;
+  }
+}

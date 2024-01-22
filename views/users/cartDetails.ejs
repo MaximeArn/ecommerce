@@ -11,51 +11,47 @@
 
     <h1>Cart summary</h1>
     <div class="container cart-container">
-      <div class="cart-items">
+      <ul class="cart-items">
         <% if (user.cart.length === 0) { %>
-
         <p>Your cart is empty</p>
-        <% } else { %>
-        <ul class="cart-items-list">
-          <% user.cart.forEach(itemGroup => { %>
-          <li class="cart-item">
-            <div class="item-details">
-              <h2><%= itemGroup[0].name %></h2>
-              <p>
-                <strong>Description:</strong> <%= itemGroup[0].description %>
-              </p>
-              <p><strong>Price:</strong> <%= itemGroup[0].price %> €</p>
-            </div>
-            <div class="quantity-controls">
-              <input
-                type="number"
-                value="<%= itemGroup.length%>"
-                min="1"
-                max="<%= itemGroup[0].stock%>"
-              />
-              <button
-                value="<%= itemGroup[0]._id%>"
-                class="quantity-control-btn increment"
-              >
-                +
-              </button>
-              <button
-                value="<%= itemGroup[0]._id%>"
-                class="quantity-control-btn decrement"
-              >
-                -
-              </button>
-            </div>
-          </li>
-          <% }); %>
-        </ul>
-        <% } %>
-      </div>
+
+        <% } else { %> <% user.cart.forEach(itemGroup => { %>
+        <li class="cart-item">
+          <div class="item-details">
+            <h2><%= itemGroup[0].name %></h2>
+            <p><strong>Description:</strong> <%= itemGroup[0].description %></p>
+            <p><strong>Price:</strong> <%= itemGroup[0].price %> €</p>
+          </div>
+          <div class="quantity-controls">
+            <input
+              type="number"
+              value="<%= itemGroup.length%>"
+              min="1"
+              max="<%= itemGroup[0].stock%>"
+            />
+            <button
+              value="<%= itemGroup[0]._id%>"
+              class="quantity-control-btn increment"
+            >
+              +
+            </button>
+            <button
+              value="<%= itemGroup[0]._id%>"
+              class="quantity-control-btn decrement"
+            >
+              -
+            </button>
+          </div>
+        </li>
+        <% }); %> <% } %>
+      </ul>
 
       <div class="cart-summary">
-        <h2>Cart summary</h2>
-        <p>Total d'items: <%= user.cartLength%></p>
-        <p>Total price: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
+        <div class="summary-layout">
+          <h2>Cart summary</h2>
+          <p>Total d'items: <%= user.cartLength%></p>
+          <p>Total price: <%= Math.round(user.totalCart * 100) / 100 %> €</p>
+        </div>
       </div>
     </div>
     <% if (user.cart.length !== 0) { %>

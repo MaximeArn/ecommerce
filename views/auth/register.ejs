@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/auth.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>Register</title>
   </head>
   <body>
@@ -24,6 +29,10 @@
     </form>
     <a href="/auth/login">Login</a>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script>
       document
         .getElementById("registerForm")
@@ -44,15 +53,24 @@
             body: JSON.stringify(formData),
           })
             .then((response) => {
-              console.log("first then ");
-              response.json();
-            })
-            .then((data) => {
-              console.log("user has been registered");
-              window.location.href = "/auth/login";
+              if (response.ok) {
+                window.location.href = "/auth/login";
+              } else {
+                return response.json().then((errorData) => {
+                  console.log(errorData);
+                  throw new Error(errorData.message);
+                });
+              }
             })
             .catch((error) => {
-              console.log("Error:", error);
+              console.log(error);
+              Toastify({
+                text: error.message,
+                duration: 3000,
+                style: {
+                  background: "#dc3545",
+                },
+              }).showToast();
             });
         });
     </script>

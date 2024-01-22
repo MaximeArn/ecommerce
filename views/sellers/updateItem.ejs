@@ -102,7 +102,7 @@
         .getElementById("delete-item")
         .addEventListener("click", (event) => {
           event.preventDefault();
-          fetch(`http://localhost:6543/seller/item/${item._id}`, {
+          fetch(`https://ecommerce-lk8b.onrender.com/seller/item/${item._id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -161,7 +161,7 @@
           stock,
           tags: item.tags,
         };
-        fetch(`http://localhost:6543/seller/item/${item._id}`, {
+        fetch(`https://ecommerce-lk8b.onrender.com/seller/item/${item._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

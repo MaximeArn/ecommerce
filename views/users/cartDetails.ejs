@@ -69,7 +69,8 @@
       return cartLength;
     };
     const increment = ({ target: { value } }) => {
-      const requestUri = "http://localhost:6543/item/addCart/" + value;
+      const requestUri =
+        "https://ecommerce-lk8b.onrender.com/item/addCart/" + value;
       fetch(requestUri, {
         method: "POST",
         headers: {
@@ -90,7 +91,8 @@
     });
 
     const decrement = ({ target: { value } }) => {
-      const requestUri = "http://localhost:6543/item/removeFromCart/" + value;
+      const requestUri =
+        "https://ecommerce-lk8b.onrender.com/item/removeFromCart/" + value;
       fetch(requestUri, {
         method: "POST",
         headers: {
@@ -114,7 +116,7 @@
       .getElementById("emptyCartButton")
       .addEventListener("click", (event) => {
         event.preventDefault();
-        fetch("http://localhost:6543/emptyCart", {
+        fetch("https://ecommerce-lk8b.onrender.com/emptyCart", {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

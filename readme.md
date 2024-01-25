@@ -36,7 +36,7 @@ I made it mainly to train my backend skills that's why I used ChatGpt to feed my
 
 ## How to test :
 
-visit _[ecommerce](https://ecommerce-lk8b.onrender.com/)_
+visit _[ecommerce](https://ecommerce-lk8b.onrender.com/)_ (note that as it is hosted on a free tier the first request you will make will probably start the server that is sleeping because of inactivity so just be patient let it the time to wake up and then test it)
 
 You can create a new user by your own by registering but if you want to test admin and sellers function you have to use these following credentials :
 
